@@ -1,0 +1,13 @@
+<nav style="background:#1976d2;padding:10px;color:white;display:flex;gap:20px;align-items:center">
+  <span style="font-weight:bold">VM Manager</span>
+  <a routerLink="/vms" routerLinkActive="active" style="color:white;text-decoration:none">VMs</a>
+  <a routerLink="/logs" routerLinkActive="active" style="color:white;text-decoration:none">Logs</a>
+</nav>
+
+<main style="padding:20px">
+  <router-outlet></router-outlet>
+</main>
+
+<style>
+  a.active { text-decoration: underline; }
+</style>

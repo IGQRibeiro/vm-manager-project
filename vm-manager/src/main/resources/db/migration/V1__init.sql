@@ -1,0 +1,18 @@
+CREATE TABLE IF NOT EXISTS virtual_machine (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(100) NOT NULL,
+  cpu INT NOT NULL CHECK (cpu > 0),
+  memory_gb INT NOT NULL CHECK (memory_gb > 0),
+  disk_gb INT NOT NULL CHECK (disk_gb > 0),
+  status VARCHAR(20) NOT NULL DEFAULT 'STOPPED',
+  created_at TIMESTAMP NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS vm_task_log (
+  id SERIAL PRIMARY KEY,
+  vm_id INT NOT NULL REFERENCES virtual_machine(id) ON DELETE CASCADE,
+  username VARCHAR(100) NOT NULL,
+  action VARCHAR(20) NOT NULL,
+  vm_name VARCHAR(100) NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT NOW()
+);

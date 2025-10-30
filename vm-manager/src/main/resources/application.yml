@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/vms
+    username: app
+    password: app
+  jpa:
+    hibernate:
+      ddl-auto: validate        # Flyway gerencia o schema
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false         # evita warning e N+1
+  mvc:
+    problemdetails:
+      enabled: true
+
+logging:
+  level:
+    org.hibernate.SQL: warn
+
+server:
+  port: 8080

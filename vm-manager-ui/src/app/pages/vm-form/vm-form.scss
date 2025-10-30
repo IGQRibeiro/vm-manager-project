@@ -1,0 +1,12 @@
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(240px, 1fr));
+  gap: 16px;
+  max-width: 720px;
+  padding: 16px;
+}
+.actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 8px;
+}
